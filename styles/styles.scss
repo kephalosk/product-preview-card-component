@@ -21,39 +21,43 @@ $radius-8px: functions.to-rem(8px);
 $max-card-width: functions.to-rem(600px);
 $phone-width: functions.to-rem(600px);
 
+$max-scale-factor: 1.5;
+$partial-scale-factor: 0.5;
+$partial-viewport-factor: 0.5vw;
+
 $font-size-display: functions.to-rem(32px);
 $font-size-display-min: $font-size-display;
-$font-size-display-partial: calc($font-size-display * 0.8);
-$font-size-display-max: calc($font-size-display * 3);
+$font-size-display-partial: calc($font-size-display * $partial-scale-factor);
+$font-size-display-max: calc($font-size-display * $max-scale-factor);
 $font-size-body: functions.to-rem(14px);
 $font-size-body-min: $font-size-body;
-$font-size-body-partial: calc($font-size-body * 0.8);
-$font-size-body-max: calc($font-size-body * 3);
+$font-size-body-partial: calc($font-size-body * $partial-scale-factor);
+$font-size-body-max: calc($font-size-body * $max-scale-factor);
 $font-size-overline: functions.to-rem(12px);
 $font-size-overline-min: $font-size-overline;
-$font-size-overline-partial: calc($font-size-overline * 0.8);
-$font-size-overline-max: calc($font-size-overline * 3);
+$font-size-overline-partial: calc($font-size-overline * $partial-scale-factor);
+$font-size-overline-max: calc($font-size-overline * $max-scale-factor);
 $font-size-button-text: functions.to-rem(14px);
 $font-size-button-text-min: $font-size-button-text;
-$font-size-button-text-partial: calc($font-size-button-text * 0.8);
-$font-size-button-text-max: calc($font-size-button-text * 3);
+$font-size-button-text-partial: calc($font-size-button-text * $partial-scale-factor);
+$font-size-button-text-max: calc($font-size-button-text * $max-scale-factor);
 
 $line-height-display: functions.to-rem(32px);
 $line-height-display-min: $line-height-display;
-$line-height-display-partial: calc($line-height-display * 0.8);
-$line-height-display-max: calc($line-height-display * 3);
+$line-height-display-partial: calc($line-height-display * $partial-scale-factor);
+$line-height-display-max: calc($line-height-display * $max-scale-factor);
 $line-height-body: functions.to-rem(23px);
 $line-height-body-min: $line-height-body;
-$line-height-body-partial: calc($line-height-body * 0.8);
-$line-height-body-max: calc($line-height-body * 3);
+$line-height-body-partial: calc($line-height-body * $partial-scale-factor);
+$line-height-body-max: calc($line-height-body * $max-scale-factor);
 $line-height-button-text: functions.to-rem(17.1px);
 $line-height-button-text-min: $line-height-button-text;
-$line-height-button-text-partial: calc($line-height-button-text * 0.8);
-$line-height-button-text-max: calc($line-height-button-text * 3);
+$line-height-button-text-partial: calc($line-height-button-text * $partial-scale-factor);
+$line-height-button-text-max: calc($line-height-button-text * $max-scale-factor);
 $line-height-overline: functions.to-rem(14.6px);
 $line-height-overline-min: $line-height-overline;
-$line-height-overline-partial: calc($line-height-overline * 0.8);
-$line-height-overline-max: calc($line-height-overline * 3);
+$line-height-overline-partial: calc($line-height-overline * $partial-scale-factor);
+$line-height-overline-max: calc($line-height-overline * $max-scale-factor);
 
 @mixin tablet-and-up {
   @media (min-width: $phone-width) {
@@ -64,32 +68,32 @@ $line-height-overline-max: calc($line-height-overline * 3);
 @mixin text-display {
   font-family: Fraunces, serif;
   font-weight: 700;
-  font-size: clamp($font-size-display-min, $font-size-display-partial + 1vw, $font-size-display-max);
-  line-height: clamp($line-height-display-min, $line-height-display-partial + 1vw, $line-height-display-max);
+  font-size: clamp($font-size-display-min, $font-size-display-partial + $partial-viewport-factor, $font-size-display-max);
+  line-height: clamp($line-height-display-min, $line-height-display-partial + $partial-viewport-factor, $line-height-display-max);
   letter-spacing: 0;
 }
 
 @mixin text-body {
   font-family: Montserrat, sans-serif;
   font-weight: 500;
-  font-size: clamp($font-size-body-min, $font-size-body-partial + 1vw, $font-size-body-max);
-  line-height: clamp($line-height-body-min, $line-height-body-partial + 1vw, $line-height-body-max);
+  font-size: clamp($font-size-body-min, $font-size-body-partial + $partial-viewport-factor, $font-size-body-max);
+  line-height: clamp($line-height-body-min, $line-height-body-partial + $partial-viewport-factor, $line-height-body-max);
   letter-spacing: 0;
 }
 
 @mixin text-button-text {
   font-family: Montserrat, sans-serif;
   font-weight: 700;
-  font-size: clamp($font-size-button-text-min, $font-size-button-text-partial + 1vw, $font-size-button-text-max);
-  line-height: clamp($line-height-button-text-min, $line-height-button-text-partial + 1vw, $line-height-button-text-max);
+  font-size: clamp($font-size-button-text-min, $font-size-button-text-partial + $partial-viewport-factor, $font-size-button-text-max);
+  line-height: clamp($line-height-button-text-min, $line-height-button-text-partial + $partial-viewport-factor, $line-height-button-text-max);
   letter-spacing: 0;
 }
 
 @mixin text-overline {
   font-family: Montserrat, sans-serif;
   font-weight: 500;
-  font-size: clamp($font-size-overline-min, $font-size-overline-partial + 1vw, $font-size-overline-max);
-  line-height: clamp($line-height-overline-min, $line-height-overline-partial + 1vw, $line-height-overline-max);
+  font-size: clamp($font-size-overline-min, $font-size-overline-partial + $partial-viewport-factor, $font-size-overline-max);
+  line-height: clamp($line-height-overline-min, $line-height-overline-partial + $partial-viewport-factor, $line-height-overline-max);
   letter-spacing: 5px;
 }
 
@@ -100,7 +104,8 @@ $line-height-overline-max: calc($line-height-overline * 3);
 body {
   margin: 0;
   background-color: $color-cream-bg;
-  height: 100%;
+  height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -122,7 +127,9 @@ h1, p {
 
 .card {
   border-radius: $radius-10px;
+  background-color: $color-pure-white;
   width: 100%;
+  max-width: $max-card-width;
   display: grid;
   grid-template-rows: auto 1fr;
 
@@ -136,16 +143,26 @@ h1, p {
   border-radius: 0 0 $radius-10px $radius-10px;
   padding: $space-24px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  row-gap: $space-20px;
 
   @include tablet-and-up {
     padding: $space-32px;
+    row-gap: $space-30px;
   }
 }
 
 .cardContentButton {
+  border: 0;
   border-radius: $radius-8px;
   background-color: $color-deep-aquamarine;
   padding: $space-16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   color: $color-pure-white;
   cursor: pointer;
 
@@ -158,7 +175,7 @@ h1, p {
 
 .cardContentButtonIcon {
   margin-right: $space-12px;
-  height: clamp($line-height-button-text-min, $line-height-button-text-partial + 1vw, $line-height-button-text-max);
+  height: clamp($line-height-button-text-min, $line-height-button-text-partial + $partial-viewport-factor, $line-height-button-text-max);
   width: auto;
 }
 
@@ -173,6 +190,7 @@ h1, p {
 }
 
 .cardContentHeaderCategory {
+  text-transform: uppercase;
   color: $color-aurometal-saurus;
 
   @include text-overline;
@@ -214,11 +232,10 @@ h1, p {
   border-radius: $radius-10px $radius-10px 0 0;
   height: auto;
   width: 100%;
+  object-fit: cover;
 
   @include tablet-and-up {
     border-radius: $radius-10px 0 0 $radius-10px ;
     height: 100%;
-    width: auto;
-    object-fit: cover;
   }
 }

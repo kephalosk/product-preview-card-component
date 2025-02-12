@@ -11,9 +11,9 @@
     <body>
         <main id="app">
             <section class="card">
-                <picture class="cardImage">
+                <picture>
                     <source srcset="images/image-product-desktop.jpg" media="(min-width: 600px)">
-                    <img src="images/image-product-mobile.jpg" alt="product image" aria-hidden="true"/>
+                    <img class="cardImage" src="images/image-product-mobile.jpg" alt="product image" aria-hidden="true"/>
                 </picture>
                 <div class="cardContent">
                     <header class="cardContentHeader">
@@ -29,8 +29,8 @@
                         <label class="cardContentPriceBarOld">$169.99</label>
                     </div>
                     <button class="cardContentButton">
-                        <img src="images/icon-cart.svg" alt="cart icon" aria-hidden="true"/>
-                        Add to Cart
+                        <img class="cardContentButtonIcon" src="images/icon-cart.svg" alt="cart icon" aria-hidden="true"/>
+                        <label>Add to Cart</label>
                     </button>
                 </div>
             </section>
