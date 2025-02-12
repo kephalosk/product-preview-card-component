@@ -17,15 +17,15 @@ This is a solution to the [Product preview card component challenge on Frontend 
 
 Desktop
 
-![Desktop](screenshots/desktop.png)
+![Desktop](ressources/screenshots/desktop.png)
 
 Active State
 
-![Active](screenshots/active.png)
+![Active](ressources/screenshots/active.png)
 
 Mobile
 
-![Mobile](screenshots/mobile.png)
+![Mobile](ressources/screenshots/mobile.png)
 
 ### Links
 
