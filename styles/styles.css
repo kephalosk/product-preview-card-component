@@ -25,4 +25,128 @@ h1, p {
   align-items: center;
 }
 
+.card {
+  border-radius: 0.625rem;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+@media (min-width: 37.5rem) {
+  .card {
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.cardContent {
+  border-radius: 0 0 0.625rem 0.625rem;
+  padding: 1.5rem;
+  width: 100%;
+}
+@media (min-width: 37.5rem) {
+  .cardContent {
+    padding: 2rem;
+  }
+}
+
+.cardContentButton {
+  border-radius: 0.5rem;
+  background-color: #3D8168;
+  padding: 1rem;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.875rem, 0.7rem + 1vw, 2.625rem);
+  line-height: clamp(1.06875rem, 0.855rem + 1vw, 3.20625rem);
+  letter-spacing: 0;
+}
+.cardContentButton:hover {
+  background-color: #1A4032;
+}
+
+.cardContentButtonIcon {
+  margin-right: 0.75rem;
+  height: clamp(1.06875rem, 0.855rem + 1vw, 3.20625rem);
+  width: auto;
+}
+
+.cardContentHeader {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+@media (min-width: 37.5rem) {
+  .cardContentHeader {
+    row-gap: 1.25rem;
+  }
+}
+
+.cardContentHeaderCategory {
+  color: #6C7289;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.75rem, 0.6rem + 1vw, 2.25rem);
+  line-height: clamp(0.9125rem, 0.73rem + 1vw, 2.7375rem);
+  letter-spacing: 5px;
+}
+
+.cardContentHeaderText {
+  color: #6C7289;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.875rem, 0.7rem + 1vw, 2.625rem);
+  line-height: clamp(1.4375rem, 1.15rem + 1vw, 4.3125rem);
+  letter-spacing: 0;
+}
+
+.cardContentHeaderTitle {
+  color: #1C232B;
+  font-family: Fraunces, serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 1.6rem + 1vw, 6rem);
+  line-height: clamp(2rem, 1.6rem + 1vw, 6rem);
+  letter-spacing: 0;
+}
+
+.cardContentPriceBar {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1.25rem;
+  align-items: center;
+}
+
+.cardContentPriceBarCurrent {
+  color: #3D8168;
+  font-family: Fraunces, serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 1.6rem + 1vw, 6rem);
+  line-height: clamp(2rem, 1.6rem + 1vw, 6rem);
+  letter-spacing: 0;
+}
+
+.cardContentPriceBarOld {
+  text-decoration: line-through;
+  color: #6C7289;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.875rem, 0.7rem + 1vw, 2.625rem);
+  line-height: clamp(1.4375rem, 1.15rem + 1vw, 4.3125rem);
+  letter-spacing: 0;
+}
+
+.cardImage {
+  border-radius: 0.625rem 0.625rem 0 0;
+  height: auto;
+  width: 100%;
+}
+@media (min-width: 37.5rem) {
+  .cardImage {
+    border-radius: 0.625rem 0 0 0.625rem;
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */

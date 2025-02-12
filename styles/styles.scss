@@ -13,12 +13,47 @@ $space-28px: functions.to-rem(28px);
 $space-24px: functions.to-rem(24px);
 $space-20px: functions.to-rem(20px);
 $space-16px: functions.to-rem(16px);
+$space-12px: functions.to-rem(12px);
 
 $radius-10px: functions.to-rem(10px);
 $radius-8px: functions.to-rem(8px);
 
 $max-card-width: functions.to-rem(600px);
 $phone-width: functions.to-rem(600px);
+
+$font-size-display: functions.to-rem(32px);
+$font-size-display-min: $font-size-display;
+$font-size-display-partial: calc($font-size-display * 0.8);
+$font-size-display-max: calc($font-size-display * 3);
+$font-size-body: functions.to-rem(14px);
+$font-size-body-min: $font-size-body;
+$font-size-body-partial: calc($font-size-body * 0.8);
+$font-size-body-max: calc($font-size-body * 3);
+$font-size-overline: functions.to-rem(12px);
+$font-size-overline-min: $font-size-overline;
+$font-size-overline-partial: calc($font-size-overline * 0.8);
+$font-size-overline-max: calc($font-size-overline * 3);
+$font-size-button-text: functions.to-rem(14px);
+$font-size-button-text-min: $font-size-button-text;
+$font-size-button-text-partial: calc($font-size-button-text * 0.8);
+$font-size-button-text-max: calc($font-size-button-text * 3);
+
+$line-height-display: functions.to-rem(32px);
+$line-height-display-min: $line-height-display;
+$line-height-display-partial: calc($line-height-display * 0.8);
+$line-height-display-max: calc($line-height-display * 3);
+$line-height-body: functions.to-rem(23px);
+$line-height-body-min: $line-height-body;
+$line-height-body-partial: calc($line-height-body * 0.8);
+$line-height-body-max: calc($line-height-body * 3);
+$line-height-button-text: functions.to-rem(17.1px);
+$line-height-button-text-min: $line-height-button-text;
+$line-height-button-text-partial: calc($line-height-button-text * 0.8);
+$line-height-button-text-max: calc($line-height-button-text * 3);
+$line-height-overline: functions.to-rem(14.6px);
+$line-height-overline-min: $line-height-overline;
+$line-height-overline-partial: calc($line-height-overline * 0.8);
+$line-height-overline-max: calc($line-height-overline * 3);
 
 @mixin tablet-and-up {
   @media (min-width: $phone-width) {
@@ -29,32 +64,32 @@ $phone-width: functions.to-rem(600px);
 @mixin text-display {
   font-family: Fraunces, serif;
   font-weight: 700;
-  font-size: functions.to-rem(32px);
-  line-height: functions.to-rem(32px);
+  font-size: clamp($font-size-display-min, $font-size-display-partial + 1vw, $font-size-display-max);
+  line-height: clamp($line-height-display-min, $line-height-display-partial + 1vw, $line-height-display-max);
   letter-spacing: 0;
 }
 
 @mixin text-body {
   font-family: Montserrat, sans-serif;
   font-weight: 500;
-  font-size: functions.to-rem(14px);
-  line-height: functions.to-rem(23px);
+  font-size: clamp($font-size-body-min, $font-size-body-partial + 1vw, $font-size-body-max);
+  line-height: clamp($line-height-body-min, $line-height-body-partial + 1vw, $line-height-body-max);
   letter-spacing: 0;
 }
 
 @mixin text-button-text {
   font-family: Montserrat, sans-serif;
   font-weight: 700;
-  font-size: functions.to-rem(14px);
-  line-height: functions.to-rem(17.1px);
+  font-size: clamp($font-size-button-text-min, $font-size-button-text-partial + 1vw, $font-size-button-text-max);
+  line-height: clamp($line-height-button-text-min, $line-height-button-text-partial + 1vw, $line-height-button-text-max);
   letter-spacing: 0;
 }
 
 @mixin text-overline {
   font-family: Montserrat, sans-serif;
   font-weight: 500;
-  font-size: functions.to-rem(12px);
-  line-height: functions.to-rem(14.6px);
+  font-size: clamp($font-size-overline-min, $font-size-overline-partial + 1vw, $font-size-overline-max);
+  line-height: clamp($line-height-overline-min, $line-height-overline-partial + 1vw, $line-height-overline-max);
   letter-spacing: 5px;
 }
 
@@ -83,4 +118,107 @@ h1, p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.card {
+  border-radius: $radius-10px;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  @include tablet-and-up {
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.cardContent {
+  border-radius: 0 0 $radius-10px $radius-10px;
+  padding: $space-24px;
+  width: 100%;
+
+  @include tablet-and-up {
+    padding: $space-32px;
+  }
+}
+
+.cardContentButton {
+  border-radius: $radius-8px;
+  background-color: $color-deep-aquamarine;
+  padding: $space-16px;
+  color: $color-pure-white;
+  cursor: pointer;
+
+  @include text-button-text;
+
+  &:hover {
+    background-color: $color-deep-aquamarine-hover;
+  }
+}
+
+.cardContentButtonIcon {
+  margin-right: $space-12px;
+  height: clamp($line-height-button-text-min, $line-height-button-text-partial + 1vw, $line-height-button-text-max);
+  width: auto;
+}
+
+.cardContentHeader {
+  display: flex;
+  flex-direction: column;
+  row-gap: $space-16px;
+
+  @include tablet-and-up {
+    row-gap: $space-20px;
+  }
+}
+
+.cardContentHeaderCategory {
+  color: $color-aurometal-saurus;
+
+  @include text-overline;
+}
+
+.cardContentHeaderText {
+  color: $color-aurometal-saurus;
+
+  @include text-body;
+}
+
+.cardContentHeaderTitle {
+  color: $color-gunmetal;
+
+  @include text-display;
+}
+
+.cardContentPriceBar {
+  display: flex;
+  flex-direction: row;
+  column-gap: $space-20px;
+  align-items: center;
+}
+
+.cardContentPriceBarCurrent {
+  color: $color-deep-aquamarine;
+
+  @include text-display;
+}
+
+.cardContentPriceBarOld {
+  text-decoration: line-through;
+  color: $color-aurometal-saurus;
+
+  @include text-body;
+}
+
+.cardImage {
+  border-radius: $radius-10px $radius-10px 0 0;
+  height: auto;
+  width: 100%;
+
+  @include tablet-and-up {
+    border-radius: $radius-10px 0 0 $radius-10px ;
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+  }
 }
