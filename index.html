@@ -9,22 +9,35 @@
         <link rel="stylesheet" href="styles/styles.css">
     </head>
     <body>
-        <main id="app"></main>
+        <main id="app">
+            <section class="card">
+                <picture class="cardImage">
+                    <source srcset="images/image-product-desktop.jpg" media="(min-width: 600px)">
+                    <img src="images/image-product-mobile.jpg" alt="product image" aria-hidden="true"/>
+                </picture>
+                <div class="cardContent">
+                    <header class="cardContentHeader">
+                        <label class="cardContentHeaderCategory">Perfume</label>
+                        <h1 class="cardContentHeaderTitle">Gabrielle Essence Eau De Parfum</h1>
+                        <p class="cardContentHeaderText">
+                            A floral, solar and voluptuous interpretation composed by Olivier Polge,
+                            Perfumer-Creator for the House of CHANEL.
+                        </p>
+                    </header>
+                    <div class="cardContentPriceBar">
+                        <label class="cardContentPriceBarCurrent">$149.99</label>
+                        <label class="cardContentPriceBarOld">$169.99</label>
+                    </div>
+                    <button class="cardContentButton">
+                        <img src="images/icon-cart.svg" alt="cart icon" aria-hidden="true"/>
+                        Add to Cart
+                    </button>
+                </div>
+            </section>
+        </main>
         <footer class="attribution">
             Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
             Coded by <a href="https://github.com/kephalosk">kephalosk</a>.
         </footer>
     </body>
 </html>
-
-<!--  Perfume-->
-
-<!--  Gabrielle Essence Eau De Parfum-->
-
-<!--  A floral, solar and voluptuous interpretation composed by Olivier Polge, -->
-<!--  Perfumer-Creator for the House of CHANEL.-->
-
-<!--  $149.99-->
-<!--  $169.99-->
-
-<!--  Add to Cart-->
