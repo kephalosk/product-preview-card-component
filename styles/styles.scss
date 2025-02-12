@@ -125,6 +125,14 @@ h1, p {
   align-items: center;
 }
 
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
 .card {
   border-radius: $radius-10px;
   background-color: $color-pure-white;
